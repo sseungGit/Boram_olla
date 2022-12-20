@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인</title>
+</head>
+<body>
+	<h1>로그인 화면</h1>
+	<p>추후 필요없으면 삭제하셔도 됩니다.</p>
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>NAME</th>
+				<th>REG_DATE</th>
+			</tr>
+		</thead>
+		<tbody>
+		{%if userData %}
+		{%for u in userData %}
+		<tr>
+			<td>{{u.id}}</td>
+			<td>{{u.name}}</td>
+			<td>{{u.reg_date}}</td>
+		</tr>
+		{%endfor %}	
+		{%else %}
+		<tr>
+			<td colspan="2">비어있음</td>
+		</tr>
+		{%endif %}
+		</tbody>
+	</table>
+</body>
+</html>
