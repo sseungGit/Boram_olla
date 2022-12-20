@@ -16,14 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from stock import views
-# from django.conf.urls.static import static
-# from django.conf import settings
+from django.urls.conf import include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.mainFunc), 
-    path("login", views.loginFunc), 
-    path("board", views.boardFunc), 
+    path('user/', include('stock.urls')),
+ 
+    path('board/', include('stock.urls')),
 ]
-
-# urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
